@@ -1,0 +1,126 @@
+.cart-movie {
+    display: flex;
+    flex-direction: column;
+    background-color: #bf6f13;
+    color: white;
+    border-radius: 10px;
+    height: 380px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    margin: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.cart-movie:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.cart-movie-poster {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.cart-movie:hover .cart-movie-poster {
+    transform: scale(1.1);
+}
+
+.cart-info {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.cart-title {
+    font-size: 1.2em;
+    height: 50px;
+    margin: 0;
+    transition: color 0.3s;
+}
+
+.cart-year {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.btn-watchlist,
+.btn-watched {
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-watchlist::after,
+.btn-watched::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+    z-index: 0;
+}
+
+.btn-watchlist:hover::after,
+.btn-watched:hover::after {
+    transform: translateY(0);
+}
+
+.btn-watchlist:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.btn-watched:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.cart-movie {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Input field styles */
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-field:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    outline: none;
+}
